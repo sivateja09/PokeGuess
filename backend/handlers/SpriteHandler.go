@@ -13,7 +13,7 @@ func SpriteHandler(cwd string) http.HandlerFunc {
 		intId, _ := strconv.Atoi(id)
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Content-Type", "image/webp")
-		spritePath := filepath.Join(cwd, fmt.Sprintf("assets/sprites/%04d.webp", intId))
+		spritePath := filepath.Join(cwd, fmt.Sprintf("sprites/%04d.webp", intId))
 		http.ServeFile(w, r, spritePath)
 	}
 }
